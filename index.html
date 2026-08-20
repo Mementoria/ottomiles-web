@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OttoMiles — Coming soon</title>
+    <meta
+      name="description"
+      content="OttoMiles — effortless mileage and earnings tracking for rideshare and delivery drivers. Coming soon for iOS and Android."
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#2680FA" />
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:title" content="OttoMiles — Coming soon" />
+    <meta
+      property="og:description"
+      content="Effortless mileage and earnings tracking for rideshare and delivery drivers."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ottomiles.app/" />
+    <meta property="og:image" content="https://ottomiles.app/poster.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <style>
+      :root {
+        --bg: #f4f1ea;
+        --bg-glow: #e7f0fb;
+        --ink: #1c2634;
+        --muted: #5a6675;
+        --card: #ffffff;
+        --accent: #2680fa;
+        --otto: #22508b;
+        --miles: #2f78b5;
+        --hairline: rgba(28, 38, 52, 0.12);
+        --chip-bg: rgba(28, 38, 52, 0.05);
+        --shadow: 0 24px 60px -24px rgba(15, 39, 64, 0.4);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme='light']) {
+          --bg: #0d1017;
+          --bg-glow: #12233b;
+          --ink: #eef2f7;
+          --muted: #9aa7b6;
+          --card: #151a22;
+          --otto: #6fa6ee;
+          --miles: #8fc0f0;
+          --hairline: rgba(255, 255, 255, 0.12);
+          --chip-bg: rgba(255, 255, 255, 0.06);
+          --shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.65);
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(1.5rem, 4vh, 2.75rem);
+        padding: clamp(1.5rem, 5vw, 3rem);
+        background:
+          radial-gradient(120% 90% at 50% -10%, var(--bg-glow), transparent 60%),
+          var(--bg);
+        color: var(--ink);
+        font-family:
+          system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        text-align: center;
+      }
+
+      .stage {
+        width: 100%;
+        max-width: 760px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(1.25rem, 3.5vh, 2rem);
+      }
+
+      /* Video hero */
+      .video-wrap {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        background: #cfe0f2;
+        isolation: isolate;
+      }
+      .video-wrap video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .play-btn {
+        position: absolute;
+        left: 50%;
+        bottom: 12%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 80px;
+        border: none;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        color: #fff;
+        background: var(--accent);
+        box-shadow:
+          0 10px 30px -6px rgba(38, 128, 250, 0.6),
+          0 0 0 10px rgba(255, 255, 255, 0.18);
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease,
+          opacity 0.25s ease;
+      }
+      .play-btn:hover {
+        transform: translateX(-50%) scale(1.06);
+      }
+      .play-btn:focus-visible {
+        outline: 3px solid #fff;
+        outline-offset: 3px;
+      }
+      .play-btn svg {
+        width: 34px;
+        height: 34px;
+        margin-left: 4px;
+      }
+      .video-wrap.playing .play-btn {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* Wordmark echoes the logo's dual-shade blues */
+      .wordmark {
+        margin: 0;
+        font-size: clamp(2rem, 7vw, 3.25rem);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1;
+      }
+      .wordmark .o {
+        color: var(--otto);
+      }
+      .wordmark .m {
+        color: var(--miles);
+      }
+
+      .tagline {
+        margin: 0;
+        max-width: 34ch;
+        font-size: clamp(1rem, 2.6vw, 1.2rem);
+        line-height: 1.5;
+        color: var(--muted);
+      }
+
+      /* Coming-soon badges */
+      .soon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.9rem;
+      }
+      .soon-label {
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.6rem 1.05rem;
+        border-radius: 999px;
+        border: 1px solid var(--hairline);
+        background: var(--chip-bg);
+        color: var(--ink);
+        font-size: 0.95rem;
+        font-weight: 600;
+      }
+      .badge svg {
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
+      }
+
+      footer {
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="stage">
+      <h1 class="visually-hidden">OttoMiles — coming soon for iOS and Android</h1>
+
+      <div class="video-wrap" aria-hidden="false">
+        <video
+          id="teaser"
+          poster="poster.jpg"
+          preload="metadata"
+          playsinline
+          aria-label="OttoMiles teaser video"
+        >
+          <source src="ottomiles-teaser.mp4" type="video/mp4" />
+        </video>
+        <button class="play-btn" type="button" aria-label="Play the OttoMiles teaser">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5v14l11-7z" fill="currentColor" />
+          </svg>
+        </button>
+      </div>
+
+      <p class="wordmark" aria-hidden="true">
+        <span class="o">Otto</span><span class="m">Miles</span>
+      </p>
+
+      <p class="tagline">
+        Effortless mileage &amp; earnings tracking for rideshare and delivery drivers.
+      </p>
+
+      <div class="soon">
+        <span class="soon-label">Coming soon</span>
+        <div class="badges">
+          <span class="badge">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M16.36 12.9c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.39 0 1.78.74 3 .72 1.24-.02 2.02-1.12 2.78-2.23.88-1.28 1.24-2.52 1.26-2.58-.03-.01-2.42-.93-2.44-3.68zM14.13 6.16c.64-.78 1.07-1.86.95-2.94-.92.04-2.04.61-2.7 1.38-.59.69-1.11 1.79-.97 2.85 1.03.08 2.08-.52 2.72-1.29z"
+              />
+            </svg>
+            iOS
+          </span>
+          <span class="badge">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M17.6 9.48l1.84-3.18a.4.4 0 0 0-.7-.4l-1.86 3.23a11.4 11.4 0 0 0-9.76 0L5.26 5.9a.4.4 0 1 0-.7.4L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"
+              />
+            </svg>
+            Android
+          </span>
+        </div>
+      </div>
+    </main>
+
+    <footer>&copy; <span id="yr">2026</span> Mementoria</footer>
+
+    <script>
+      const wrap = document.querySelector('.video-wrap');
+      const video = document.getElementById('teaser');
+      const btn = document.querySelector('.play-btn');
+
+      btn.addEventListener('click', () => {
+        video.play();
+      });
+      video.addEventListener('play', () => {
+        wrap.classList.add('playing');
+        video.controls = true;
+      });
+      video.addEventListener('ended', () => {
+        wrap.classList.remove('playing');
+        video.controls = false;
+        video.load(); // restore the poster frame
+      });
+
+      const yr = document.getElementById('yr');
+      if (yr) yr.textContent = String(new Date().getFullYear());
+    </script>
+  </body>
+</html>

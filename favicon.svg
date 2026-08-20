@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="158 -2 415 415" role="img" aria-labelledby="ottoIconTitle ottoIconDesc">
+<title id="ottoIconTitle">OttoMiles app icon — Otto mid-wave</title>
+<desc id="ottoIconDesc">Derived from otto-standing.svg per docs/superpowers/specs/2026-07-01-otto-app-icon-design.md: waist-up crop on the accent-blue radial ground, wave arm frozen at -114 degrees, ready smile, soft glow behind the antenna beacon. The artwork group (swayg) is nudged 20 units right for compositional balance; the background rect stays on the viewBox. Static file: the attribute transforms (armF rotation, swayg nudge) are safe because no CSS (and no transform-box) ever applies to this document.</desc>
+<defs>
+<linearGradient id="gBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFEFC"/><stop offset=".55" stop-color="#FCF9F5"/><stop offset="1" stop-color="#F3EDE4"/></linearGradient>
+<linearGradient id="gScr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B2634"/><stop offset="1" stop-color="#0B121C"/></linearGradient>
+<linearGradient id="gGloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".09"/><stop offset=".32" stop-color="#FFFFFF" stop-opacity=".02"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
+<linearGradient id="gVest" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B3441"/><stop offset="1" stop-color="#141B25"/></linearGradient>
+<linearGradient id="gBox" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D0B084"/><stop offset="1" stop-color="#B18C60"/></linearGradient>
+<radialGradient id="gHi" cx=".38" cy=".22" r=".75"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"/><stop offset=".55" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+<radialGradient id="gSh" cx=".72" cy=".78" r=".7"><stop offset=".35" stop-color="#8A755B" stop-opacity="0"/><stop offset="1" stop-color="#8A755B" stop-opacity=".18"/></radialGradient>
+<radialGradient id="gGlow"><stop offset="0" stop-color="#4C8FE0" stop-opacity=".2"/><stop offset="1" stop-color="#4C8FE0" stop-opacity="0"/></radialGradient>
+<radialGradient id="gAO"><stop offset="0" stop-color="#141B25" stop-opacity=".28"/><stop offset="1" stop-color="#141B25" stop-opacity="0"/></radialGradient>
+<linearGradient id="gBall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#63A9FF"/><stop offset="1" stop-color="#1D63D6"/></linearGradient>
+<radialGradient id="bgBlue" cx=".5" cy=".4" r=".95"><stop offset="0" stop-color="#3F8EFB"/><stop offset="1" stop-color="#1D63D6"/></radialGradient>
+<radialGradient id="gHalo"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".45"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+</defs>
+<rect x="158" y="-2" width="415" height="415" fill="url(#bgBlue)"/>
+<g id="swayg" transform="translate(20 0)">
+<g id="legs">
+<rect x="272" y="386" width="54" height="64" rx="27" fill="url(#gBody)" stroke="#E2DBCF" stroke-width="1"/>
+<rect x="354" y="386" width="54" height="64" rx="27" fill="url(#gBody)" stroke="#E2DBCF" stroke-width="1"/>
+</g>
+<g id="breath">
+<path id="torso" d="M268 268 C240 280 228 320 230 360 C232 402 262 430 340 432 C418 430 448 402 450 360 C452 320 440 280 412 268 C390 257 290 257 268 268 Z" fill="url(#gBody)" stroke="#E2DBCF" stroke-width="1"/>
+<path id="vest" d="M276 262 C248 276 240 320 244 356 C246 382 254 394 270 398 L410 398 C426 394 434 382 436 356 C440 320 432 276 404 262 C380 250 300 250 276 262 Z" fill="url(#gVest)" stroke="#2680FA" stroke-width="2.4"/>
+<ellipse cx="340" cy="270" rx="70" ry="13" fill="url(#gAO)"/>
+<path d="M296 262 Q340 285 384 262" fill="none" stroke="#0F151E" stroke-width="9"/>
+<path d="M296 260 Q340 282 384 260" fill="none" stroke="#2680FA" stroke-width="2.4"/>
+<line x1="340" y1="272" x2="340" y2="396" stroke="#0A0F16" stroke-width="4.5"/>
+<line x1="335.5" y1="274" x2="335.5" y2="396" stroke="#2680FA" stroke-width="1.8" opacity=".85"/>
+<line x1="344.5" y1="274" x2="344.5" y2="396" stroke="#2680FA" stroke-width="1.8" opacity=".85"/>
+<rect x="336.5" y="288" width="7" height="14" rx="3" fill="#9FB2C6"/>
+<path d="M414 268 Q428 302 421 336" fill="none" stroke="#2680FA" stroke-width="2" opacity=".9"/>
+<path d="M266 268 Q252 302 259 336" fill="none" stroke="#2680FA" stroke-width="2" opacity=".9"/>
+<g id="badge"><polygon points="398,302 411,309.5 411,324.5 398,332 385,324.5 385,309.5" fill="#2680FA"/><polygon points="398,309 405.5,313.3 405.5,321.7 398,326 390.5,321.7 390.5,313.3" fill="none" stroke="#EAF1FB" stroke-width="1.8"/></g>
+<g id="pocket">
+<rect x="378" y="358" width="42" height="24" rx="6" fill="#1C242F" stroke="#2A3540" stroke-width="1"/>
+<rect x="375" y="350" width="48" height="15" rx="6" fill="#0F151E" stroke="#2A3540" stroke-width="1"/>
+<circle cx="399" cy="364" r="3" fill="#2680FA"/>
+</g>
+<path d="M258 300 Q252 340 262 372" fill="none" stroke="#FFFFFF" stroke-width="5" opacity=".05"/>
+<path d="M300 258 Q340 268 380 258" fill="none" stroke="#FFFFFF" stroke-width="4" opacity=".06"/>
+<g id="armF" transform="rotate(-114 448 298.32)">
+<rect x="427" y="288" width="42" height="86" rx="21" fill="url(#gBody)" stroke="#E2DBCF" stroke-width="1"/>
+<ellipse cx="438" cy="302" rx="15" ry="21" fill="url(#gAO)" opacity=".4"/>
+</g>
+<g id="parcelG">
+<g id="boxG">
+<polygon points="226,296 310,296 317,285 233,285" fill="#DBBE93"/>
+<rect x="226" y="296" width="84" height="72" fill="url(#gBox)"/>
+<rect x="261" y="296" width="13" height="72" fill="#8F6F49" opacity=".28"/>
+<polygon points="261,296 274,296 281,285 268,285" fill="#8F6F49" opacity=".22"/>
+<path d="M240 324 L246 314 L252 324 M257 324 L263 314 L269 324 M240 331 L269 331" fill="none" stroke="#6B4E33" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="armH">
+<rect x="212" y="346" width="88" height="36" rx="18" fill="url(#gBody)" stroke="#E2DBCF" stroke-width="1"/>
+<ellipse cx="228" cy="360" rx="13" ry="15" fill="url(#gAO)" opacity=".4"/>
+</g>
+</g>
+<g id="headG">
+<path id="head" d="M340 56 C262 56 219 108 218 170 C217 226 251 270 306 278 L374 278 C429 270 463 226 462 170 C461 108 418 56 340 56 Z" fill="url(#gBody)" stroke="#E2DBCF" stroke-width="1"/>
+<path d="M340 56 C262 56 219 108 218 170 C217 226 251 270 306 278 L374 278 C429 270 463 226 462 170 C461 108 418 56 340 56 Z" fill="url(#gHi)"/>
+<path d="M340 56 C262 56 219 108 218 170 C217 226 251 270 306 278 L374 278 C429 270 463 226 462 170 C461 108 418 56 340 56 Z" fill="url(#gSh)"/>
+<g id="antenna">
+<rect id="antStick" x="337.2" y="26" width="5.6" height="36" rx="2.8" fill="#39424C"/>
+<g id="antBall">
+<circle id="halo" cx="340" cy="24" r="26" fill="url(#gHalo)"/>
+<circle id="pring" cx="340" cy="24" r="9.5" fill="none" stroke="#2680FA" stroke-width="2"/>
+<circle cx="340" cy="24" r="9.5" fill="url(#gBall)"/>
+<circle cx="336.5" cy="20.5" r="3" fill="#FFFFFF" opacity=".55"/>
+</g>
+</g>
+<g id="facePlate">
+<rect x="258" y="104" width="164" height="118" rx="44" fill="url(#gScr)" stroke="#BFB4A4" stroke-width="1"/>
+<rect x="258" y="104" width="164" height="118" rx="44" fill="url(#gGloss)"/>
+<ellipse cx="340" cy="160" rx="62" ry="36" fill="url(#gGlow)"/>
+<g id="face">
+<g id="eyesW">
+<g id="eyesS">
+<g id="eyesBl">
+<rect class="eye" x="299" y="138" width="15" height="37" rx="7.5" fill="#EAF1FB"/>
+<rect class="eye" x="366" y="138" width="15" height="37" rx="7.5" fill="#EAF1FB"/>
+</g>
+</g>
+</g>
+<path id="mR" d="M324 190 Q340 202 356 190" fill="none" stroke="#EAF1FB" stroke-width="5" stroke-linecap="round"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
