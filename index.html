@@ -209,6 +209,13 @@
       footer {
         font-size: 0.8rem;
         color: var(--muted);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 1.25rem;
+      }
+      footer a {
+        color: var(--muted);
       }
       .visually-hidden {
         position: absolute;
@@ -294,7 +301,11 @@
       </div>
     </main>
 
-    <footer>&copy; <span id="yr">2026</span> Mementoria</footer>
+    <footer>
+      <span>&copy; <span id="yr">2026</span> Mementoria</span>
+      <a href="privacy/">Privacy</a>
+      <a href="terms/">Terms</a>
+    </footer>
 
     <script>
       const wrap = document.querySelector('.video-wrap');
