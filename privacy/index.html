@@ -6,7 +6,7 @@
     <title>OttoMiles — Privacy Policy</title>
     <meta
       name="description"
-      content="How OttoMiles handles your data: the free tier keeps everything on your device; Pro syncs summaries to our servers. What we collect, why, and how to delete it."
+      content="How OttoMiles handles your data: the free tier keeps everything on your device; Pro syncs your records and stop analysis to our servers, never your stop locations. What we collect, why, and how to delete it."
     />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
@@ -144,15 +144,18 @@
       </nav>
 
       <h1>Privacy Policy</h1>
-      <p class="meta">Last updated September 22, 2026</p>
+      <p class="meta">Last updated October 4, 2026</p>
 
       <div class="callout">
         <p>
           <strong>The short version.</strong> On the free tier, OttoMiles never receives your
           location, your trips, or your earnings. All of it stays on your iPhone. If you sign in
-          and subscribe to Pro, trip and earnings <em>summaries</em> sync to our servers so they
-          follow you across devices. Raw GPS traces are never uploaded. We do not run analytics, we
-          do not show ads, and we do not sell or share your data.
+          and subscribe to Pro, your records sync to our servers so they follow you across devices.
+          That includes Otto’s analysis of each stop (when it happened, how long it took, delivery
+          or personal), but never the stop’s location. Pro also looks up what kind of place each
+          stop was, which you can turn off. Raw GPS traces are never uploaded. We combine Pro
+          drivers’ stop analysis into station statistics that never include locations. We do not
+          run analytics, we do not show ads, and we do not sell or share your data.
         </p>
       </div>
 
@@ -224,13 +227,15 @@
       <ul>
         <li>
           <strong>Blocks and trips:</strong> dates, times, platform, station, miles driven, pay,
-          tips, stop count, notes, and the single farthest point reached on each trip. The raw GPS
-          trace of a drive is never uploaded.
+          tips, stop count, notes, the single farthest point reached on each trip, and Otto’s
+          analysis of each stop on a block (Section 5). The raw GPS trace of a drive is never
+          uploaded.
         </li>
         <li><strong>Expenses:</strong> amounts, categories, notes, and receipt photos you attach.</li>
         <li>
-          <strong>Settings:</strong> your display name, tax settings, vehicle, and the home and
-          station locations you configured (including their coordinates).
+          <strong>Settings:</strong> your display name, tax settings, vehicle, the home and station
+          locations you configured (including their coordinates), and your place-lookup choice
+          (Section 5).
         </li>
       </ul>
       <p>
@@ -238,21 +243,77 @@
         Google encrypts the data in transit and at rest.
       </p>
 
-      <h2>5. Route insights (optional, Pro only)</h2>
+      <h2>5. Route insights (Pro)</h2>
       <p>
-        Route insights is off by default. If you turn it on, OttoMiles uploads the location of each
-        stop on a block (its coordinates and how long you dwelled there, without timestamps) so we
-        can label it with a street address and nearby places. To do that, we send each stop’s
-        coordinates, and nothing else, to Geoapify, a reverse-geocoding service. Geoapify does not
-        receive your account identifier or any other information about you. Their handling of the
-        request is described in
-        <a href="https://www.geoapify.com/privacy-policy/">Geoapify’s privacy policy</a>.
+        With Pro, Otto analyzes the stops on each block to separate the miles you drove for the
+        route from the miles you didn’t, and to show you how your routes break down. This section
+        covers what that involves and where each piece is kept.
+      </p>
+
+      <h3>Stop analysis, synced with your blocks</h3>
+      <p>
+        For each stop on a block, the synced block records when the stop happened, how long you
+        stayed, whether Otto counted it as a delivery or a personal stop, the kind of place it was
+        (a home, a business, a parcel locker, or unknown), and mileage figures for the route around
+        it, such as the extra miles an out-of-the-way stop added. These records contain no
+        coordinates and no addresses. They sync for every Pro block, whether or not place lookups
+        are on.
+      </p>
+
+      <h3>Place lookups: on with Pro, and you can turn them off</h3>
+      <p>
+        To tell what kind of place each stop was, OttoMiles looks it up with a mapping service.
+        Place lookups are on with Pro, and you can turn them off at any time in Settings. Nothing
+        is sent until you have acknowledged the in-app notice that explains them. Each lookup takes
+        two hops:
+      </p>
+      <ul>
+        <li>
+          <strong>Your iPhone to our server.</strong> The app sends the block’s stops, meaning each
+          stop’s coordinates and how long you stayed, in the order you made them, to our server,
+          linked to your account. Our server holds them only while it processes them and does not
+          store them.
+        </li>
+        <li>
+          <strong>Our server to Geoapify.</strong> Our server sends Geoapify, a mapping service,
+          the coordinates of each spot it still needs to look up, and nothing else: no account
+          identifier, no times, and not in the order you made them. The requests
+          come from our server, so Geoapify does not see your IP address. Their handling of requests
+          is described in
+          <a href="https://www.geoapify.com/privacy-policy/">Geoapify’s privacy policy</a>.
+        </li>
+      </ul>
+      <p>
+        From each lookup we keep the kind of place at each stop (for example a house, a shop, or a
+        parcel locker) and the categories of nearby places with their distances, stored with your
+        account. We keep no stop coordinates, no street addresses, and no shared cache of
+        looked-up places.
       </p>
       <p>
-        The address that comes back is stored with your account. We also keep a cache of resolved
-        addresses keyed only by coordinate, not by user, so a stop near a common location is not
-        looked up twice. Turning route insights off stops new uploads; existing labels remain until
-        you delete them or your account.
+        Turning place lookups off stops all new lookups. That choice syncs to your other devices
+        whenever you are signed in, even if Pro has lapsed, and our server checks it too, refusing
+        lookups for an account that has turned them off. With lookups off, Otto still analyzes your
+        stops from your iPhone’s motion data, and that analysis still syncs as described above.
+        Results already stored stay with your account until you delete it.
+      </p>
+
+      <h3>Station statistics, combined across drivers</h3>
+      <p>
+        We combine Pro drivers’ stop analysis into statistics for each delivery station, such as
+        typical stops per block, time per delivery, the mix of homes and businesses, and miles. All
+        subscribers can see them. They are built only from figures like these, never from
+        locations. A station’s statistics are shown only when enough drivers contribute to them,
+        and statistical noise is added so that no single driver’s data can be picked out. Only Pro
+        blocks contribute: free-tier data never leaves your iPhone. Station statistics are never
+        sold.
+      </p>
+
+      <h3>What stays on your iPhone</h3>
+      <p>
+        Apart from the lookup hop above, the precise location of each stop stays on your iPhone,
+        along with the GPS trace of your drive. The map of a block’s stops is drawn from that
+        on-device data, so it is available only on the iPhone that recorded the block, for 30 days
+        (Section 3).
       </p>
 
       <h2>6. Purchases</h2>
@@ -310,7 +371,7 @@
       <ul>
         <li><strong>Google (Firebase and Google Cloud):</strong> accounts, cloud storage for Pro, crash reports, App Check.</li>
         <li><strong>Apple:</strong> the App Store and subscriptions, Sign in with Apple, address search, App Attest.</li>
-        <li><strong>Geoapify:</strong> reverse geocoding for route insights, if you turn it on.</li>
+        <li><strong>Geoapify:</strong> place lookups for Pro (Section 5), unless you turn them off. It receives stop coordinates only, from our server.</li>
         <li><strong>Esri and OpenStreetMap:</strong> map imagery in the location editor.</li>
         <li><strong>Linear, GitHub (Microsoft), and Anthropic:</strong> feedback you choose to send.</li>
         <li><strong>Cloudflare and GitHub Pages:</strong> serve this website and route our email.</li>
@@ -319,7 +380,8 @@
 
       <h2>11. Retention and deletion</h2>
       <ul>
-        <li>Account data (Section 4 and 5) is kept while your account exists. If your Pro subscription lapses, sync stops but your cloud copy is kept so re-subscribing picks up where you left off.</li>
+        <li>Account data (Sections 4 and 5), including stop analysis and place-lookup results, is kept while your account exists. If your Pro subscription lapses, sync stops but your cloud copy is kept so re-subscribing picks up where you left off.</li>
+        <li>Stops sent for place lookups: held only while our server processes them, never stored.</li>
         <li>Feedback log bundles: deleted after 30 days. Crash reports: 90 days. Other feedback records: until you ask.</li>
         <li>Per-trip location logs on your device: 30 days, then removed by the app.</li>
       </ul>
@@ -328,7 +390,8 @@
         <a href="mailto:privacy@ottomiles.app">privacy@ottomiles.app</a> from the address on your
         account. We will remove your Firebase account, all synced data, receipt photos, entitlement
         record, and feedback records (including their copies in our issue tracker) within 30 days
-        and confirm by email. An in-app deletion option
+        and confirm by email. Station statistics already computed (Section 5) are aggregate figures
+        that contain none of your records, so they are not recalculated. An in-app deletion option
         is coming. You can also ask for a copy of your data or a correction the same way.
       </p>
 
