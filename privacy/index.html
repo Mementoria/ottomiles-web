@@ -275,9 +275,9 @@
           store them.
         </li>
         <li>
-          <strong>Our server to Geoapify.</strong> For each stop it can’t answer from its own
-          cache, our server sends Geoapify, a mapping service, that stop’s coordinates and nothing
-          else: no account identifier, no times, and not in the order you made them. The requests
+          <strong>Our server to Geoapify.</strong> Our server sends Geoapify, a mapping service,
+          the coordinates of each spot it still needs to look up, and nothing else: no account
+          identifier, no times, and not in the order you made them. The requests
           come from our server, so Geoapify does not see your IP address. Their handling of requests
           is described in
           <a href="https://www.geoapify.com/privacy-policy/">Geoapify’s privacy policy</a>.
@@ -286,9 +286,8 @@
       <p>
         From each lookup we keep the kind of place at each stop (for example a house, a shop, or a
         parcel locker) and the categories of nearby places with their distances, stored with your
-        account. We keep no stop coordinates and no street addresses. Any cache we keep, so the
-        same spot isn’t looked up twice, holds only those place types and categories, is not
-        linked to any account, and is keyed in a way that does not reveal locations.
+        account. We keep no stop coordinates, no street addresses, and no shared cache of
+        looked-up places.
       </p>
       <p>
         Turning place lookups off stops all new lookups. That choice syncs to your other devices
