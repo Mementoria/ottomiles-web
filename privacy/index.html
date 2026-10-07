@@ -144,7 +144,7 @@
       </nav>
 
       <h1>Privacy Policy</h1>
-      <p class="meta">Last updated October 4, 2026</p>
+      <p class="meta">Last updated October 7, 2026</p>
 
       <div class="callout">
         <p>
@@ -217,7 +217,9 @@
         You can create an account with an email address and password, an emailed sign-in link,
         Google, or Sign in with Apple. Accounts are provided through Google’s Firebase
         Authentication. We hold your email address and a random account identifier. We do not
-        read your name or profile photo from Google or Apple.
+        read your name or profile photo from Google or Apple. If you sign in with Google,
+        Firebase Authentication itself keeps your Google account’s name and a link to its profile
+        photo with your account.
       </p>
       <p>
         Signing in does nothing by itself. With an active Pro subscription, the following syncs to
@@ -234,7 +236,8 @@
         <li><strong>Expenses:</strong> amounts, categories, notes, and receipt photos you attach.</li>
         <li>
           <strong>Settings:</strong> your display name, tax settings, vehicle, the home and station
-          locations you configured (including their coordinates), and your place-lookup choice
+          locations you configured (including their addresses and coordinates), and your
+          place-lookup choice
           (Section 5).
         </li>
       </ul>
@@ -254,7 +257,8 @@
       <p>
         For each stop on a block, the synced block records when the stop happened, how long you
         stayed, whether Otto counted it as a delivery or a personal stop, the kind of place it was
-        (a home, a business, a parcel locker, or unknown), and mileage figures for the route around
+        (a home, a business, a parcel locker, a place drivers usually stop for themselves such as
+        a gas station or coffee shop, or unknown), and mileage figures for the route around
         it, such as the extra miles an out-of-the-way stop added. These records contain no
         coordinates and no addresses. They sync for every Pro block, whether or not place lookups
         are on.
@@ -338,7 +342,11 @@
         shown to you before you send: your description, the screenshot (after your edits),
         tracking diagnostics (permission state, watcher state, last sample, recent arrival,
         cold-wake flag), and, if you tick “Attach recent logs,” recent app logs, which include your
-        precise location history for recent drives (up to 30 days), sent only with that report.
+        precise location history for recent drives (up to 30 days), the step counts and motion
+        readings (such as walking or driving) from your iPhone’s motion sensors, the tracking
+        actions you took (such as starting or stopping tracking and answering the app’s
+        notifications), and timings such as how long a background sync took, sent only with that
+        report.
         Every report also carries the app version, device info, and your account identifier. Your
         email is never included.
       </p>
@@ -369,7 +377,8 @@
       <h2>10. Service providers</h2>
       <p>The companies that process data on our behalf, and for what:</p>
       <ul>
-        <li><strong>Google (Firebase and Google Cloud):</strong> accounts, cloud storage for Pro, crash reports, App Check.</li>
+        <li><strong>Google (Firebase and Google Cloud):</strong> accounts, cloud storage for Pro, crash reports, App Check. Firebase’s software also sends Google basic technical details (device, operating system, app identifier, and developer platform), never linked to you, which Google uses to measure platform and version adoption.</li>
+        <li><strong>Google Sign-In:</strong> signing in with Google, if you choose it. Google records the permission you grant OttoMiles and may use your IP address to estimate your general location for fraud prevention.</li>
         <li><strong>Apple:</strong> the App Store and subscriptions, Sign in with Apple, address search, App Attest.</li>
         <li><strong>Geoapify:</strong> place lookups for Pro (Section 5), unless you turn them off. It receives stop coordinates only, from our server.</li>
         <li><strong>Esri and OpenStreetMap:</strong> map imagery in the location editor.</li>
