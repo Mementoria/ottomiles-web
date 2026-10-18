@@ -144,7 +144,7 @@
       </nav>
 
       <h1>Privacy Policy</h1>
-      <p class="meta">Last updated October 7, 2026</p>
+      <p class="meta">Last updated October 18, 2026</p>
 
       <div class="callout">
         <p>
@@ -273,14 +273,17 @@
       </p>
       <ul>
         <li>
-          <strong>Your iPhone to our server.</strong> The app sends the block’s stops, meaning each
-          stop’s coordinates and how long you stayed, in the order you made them, to our server,
-          linked to your account. Our server holds them only while it processes them and does not
-          store them.
+          <strong>Your iPhone to our server.</strong> The app sends the block’s stops, in the order
+          you made them, to our server, linked to your account. For each stop that means a search
+          area (one point between where you parked and the farthest point of your walk, plus a radius in
+          metres) and how long you stayed. While we compare this method with the one it replaces,
+          the app also sends the point where you parked. Our server holds all of this only while it
+          processes it and does not store it.
         </li>
         <li>
           <strong>Our server to Geoapify.</strong> Our server sends Geoapify, a mapping service,
-          the coordinates of each spot it still needs to look up, and nothing else: no account
+          the search area of each spot it still needs to look up (its coordinates and radius) and,
+          while we compare methods, the point where you parked, and nothing else: no account
           identifier, no times, and not in the order you made them. The requests
           come from our server, so Geoapify does not see your IP address. Their handling of requests
           is described in
@@ -380,7 +383,7 @@
         <li><strong>Google (Firebase and Google Cloud):</strong> accounts, cloud storage for Pro, crash reports, App Check. Firebase’s software also sends Google basic technical details (device, operating system, app identifier, and developer platform), never linked to you, which Google uses to measure platform and version adoption.</li>
         <li><strong>Google Sign-In:</strong> signing in with Google, if you choose it. Google records the permission you grant OttoMiles and may use your IP address to estimate your general location for fraud prevention.</li>
         <li><strong>Apple:</strong> the App Store and subscriptions, Sign in with Apple, address search, App Attest.</li>
-        <li><strong>Geoapify:</strong> place lookups for Pro (Section 5), unless you turn them off. It receives stop coordinates only, from our server.</li>
+        <li><strong>Geoapify:</strong> place lookups for Pro (Section 5), unless you turn them off. It receives stop coordinates and search radii only, from our server.</li>
         <li><strong>Esri and OpenStreetMap:</strong> map imagery in the location editor.</li>
         <li><strong>Linear, GitHub (Microsoft), and Anthropic:</strong> feedback you choose to send.</li>
         <li><strong>Cloudflare and GitHub Pages:</strong> serve this website and route our email.</li>
