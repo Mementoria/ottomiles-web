@@ -144,7 +144,7 @@
       </nav>
 
       <h1>Privacy Policy</h1>
-      <p class="meta">Last updated October 18, 2026</p>
+      <p class="meta">Last updated November 16, 2026</p>
 
       <div class="callout">
         <p>
@@ -154,7 +154,11 @@
           That includes Otto’s analysis of each stop (when it happened, how long it took, delivery
           or personal), but never the stop’s location. Pro also looks up what kind of place each
           stop was, which you can turn off. Raw GPS traces are never uploaded. We combine Pro
-          drivers’ stop analysis into station statistics that never include locations. We do not
+          drivers’ stop analysis into station statistics that never include locations. The maps and
+          place names on your blocks come from Esri and Apple, requested directly from your iPhone.
+          We never receive those requests. They carry neither your route line nor a stop’s exact
+          location, though they show the provider roughly where a route went, and, as with any
+          network request, your IP address. We do not
           run analytics, we do not show ads, and we do not sell or share your data.
         </p>
       </div>
@@ -179,25 +183,67 @@
         of that data is stored only on your device. We have no server that receives it, and no
         way to see it. Deleting the app deletes it.
       </p>
-      <p>Two features on the free tier do contact third parties, and we want to be precise about them:</p>
+      <p>Four features on the free tier do contact third parties, and we want to be precise about them:</p>
       <ul>
         <li>
           <strong>Map imagery.</strong> The location editor (used to set your home and station
-          locations) shows a map served by Esri and OpenStreetMap. Loading it shows those
-          providers the area you are viewing, along with your IP address. The pin you save is never
-          sent to them; only the map tiles for the viewport are requested.
+          locations) and the maps of your past blocks (in the Blocks list, in the block editor as
+          soon as you open a tracked block, and in the full-screen route map) show map imagery
+          served by Esri. Loading it sends Esri the map area being shown, your IP address,
+          OttoMiles’ own map key, and the standard details any app sends with a web request (such as
+          your device and iOS version). Your route line, the pins you save, and your stops are drawn
+          on your iPhone, over the imagery, and their coordinates are never sent. Each map is framed
+          on what it shows, though: a block’s map is fitted to that block’s route, and the location
+          editor opens on your saved home or station, so the tiles requested show Esri the general
+          area a route covered, or the neighbourhood around a saved location. Only the tiles needed
+          to draw the maps you are looking at are requested, plus those for a row about to scroll
+          into view, and any area you pan or zoom to in the full-screen map. Scrolling the Blocks
+          list requests tiles for each block with a map as its row comes into view, and again if it
+          scrolls back (your iPhone may reuse tiles it has already loaded).
         </li>
         <li>
           <strong>Address search.</strong> Address search is powered by Apple Maps: the address
           text you type, and a map location used to bias results toward your area, are sent to
           Apple to return matches.
         </li>
+        <li>
+          <strong>Place names on your blocks.</strong> The town or neighbourhood names shown on your
+          blocks (for example “Maple Heights · Riverside”) come from Apple’s geocoder. When a
+          block’s map is first needed (its row scrolls into or near view in the Blocks list, or you
+          open the block), your iPhone sends Apple the centre of the grid square each of the block’s
+          stops falls in. The squares are about 1.1 km (0.7 mile) from north to south and a little
+          narrower from east to west. Where Apple names both a neighbourhood and a town for a
+          square, the 8 squares around it are looked up too. Your iPhone never sends a stop’s exact
+          location, the path you drove, or the order of your stops, but Apple does receive a
+          block’s squares together, so it can see roughly which areas you stopped in. Each answer
+          that names a place is kept on your iPhone and reused for later blocks. A square with no
+          name (open land or water), or a lookup that fails, for example while you are offline, is
+          asked again later; once a block’s names are worked out, viewing it again sends nothing.
+          Stops within the home and station locations you have set don’t name places, but the
+          squares around them can still be looked up, as neighbours of another stop’s square or for
+          a stop just outside them. If you haven’t set a home location, stops at home are treated
+          like any other stop. This happens on every tier, only for blocks your account recorded on
+          that iPhone, and only while the iPhone still holds that block’s location log (about 30
+          days). There is no setting to turn it off; the Pro place-lookup setting (Section 5) does
+          not cover it. The names Apple returns are never synced, and we never see them.
+        </li>
+        <li>
+          <strong>Asking Siri “Where was I…?”.</strong> If you ask Siri where you were on a day you
+          worked, or run OttoMiles’ “Where Was I” or “Look Up a Day” shortcut, your iPhone sends
+          Apple’s geocoder one point for that day: the farthest point from your saved home reached
+          on a GPS-tracked trip, rounded to about 100 metres. Apple returns the town’s name, and
+          Siri says it along with that day’s stations, hours, miles, and earnings. If you have no
+          home location saved, or no GPS-tracked trip that day, nothing is sent. OttoMiles does not
+          receive the request and does not save the town name. What Siri and Shortcuts do with the
+          answers OttoMiles gives them, here and for OttoMiles’ other Siri questions, is covered by
+          Apple’s privacy policy.
+        </li>
       </ul>
       <p>
-        Neither request carries your name, an account identifier, or your trip history. They are
-        subject to
-        <a href="https://www.esri.com/en-us/privacy/overview">Esri’s</a>,
-        <a href="https://osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap’s</a>, and
+        OttoMiles adds nothing that identifies you or your account to these requests, and none
+        carries your route. Each reaches the provider with your IP address, as any network request
+        does. They are subject to
+        <a href="https://www.esri.com/en-us/privacy/overview">Esri’s</a> and
         <a href="https://www.apple.com/legal/privacy/">Apple’s</a> privacy policies respectively.
       </p>
 
@@ -210,6 +256,16 @@
       <p>
         Detailed per-trip location logs are kept on the device for 30 days and then removed. Copies
         already inside an older backup are governed by that backup, not by us.
+      </p>
+      <p>
+        To draw a block’s route map, the app keeps a simplified copy of that block’s route on your
+        iPhone. Like the logs, it is removed the first time the app starts after 30 days have
+        passed since the block ended. For each block the app also keeps which grid squares its
+        stops fell in (Section 2), how many stops were in each, the block’s start and end times,
+        and the town and neighbourhood names, along with the names Apple returned for each square
+        it looked up. This place data is kept after the route map is removed, including for blocks
+        you later delete and after you sign out, until you delete the app. It is never synced. Like
+        your other app data, route maps and this place data are included in your device backups.
       </p>
 
       <h2>4. Accounts and OttoMiles Pro</h2>
@@ -311,16 +367,20 @@
         subscribers can see them. They are built only from figures like these, never from
         locations. A station’s statistics are shown only when enough drivers contribute to them,
         and statistical noise is added so that no single driver’s data can be picked out. Only Pro
-        blocks contribute: free-tier data never leaves your iPhone. Station statistics are never
+        blocks contribute: free-tier blocks never reach us. Station statistics are never
         sold.
       </p>
 
       <h3>What stays on your iPhone</h3>
       <p>
-        Apart from the lookup hop above, the precise location of each stop stays on your iPhone,
-        along with the GPS trace of your drive. The map of a block’s stops is drawn from that
-        on-device data, so it is available only on the iPhone that recorded the block, for 30 days
-        (Section 3).
+        Apart from the place lookups described above, each trip’s farthest point (Section 4), and
+        any logs you choose to attach to feedback (Section 7), the precise location of each stop
+        and the GPS trace of your drive stay on your iPhone. A block’s route map is drawn on your
+        iPhone from that on-device data, and the town names on it come from Apple’s geocoder
+        (Section 2), so both are available only on the iPhone that recorded the block, or one
+        restored from its backup. The map itself is kept for 30 days (Section 3). The only things
+        that leave your iPhone to make them are the map tiles and the grid squares described in
+        Section 2.
       </p>
 
       <h2>6. Purchases</h2>
@@ -382,9 +442,9 @@
       <ul>
         <li><strong>Google (Firebase and Google Cloud):</strong> accounts, cloud storage for Pro, crash reports, App Check. Firebase’s software also sends Google basic technical details (device, operating system, app identifier, and developer platform), never linked to you, which Google uses to measure platform and version adoption.</li>
         <li><strong>Google Sign-In:</strong> signing in with Google, if you choose it. Google records the permission you grant OttoMiles and may use your IP address to estimate your general location for fraud prevention.</li>
-        <li><strong>Apple:</strong> the App Store and subscriptions, Sign in with Apple, address search, App Attest.</li>
+        <li><strong>Apple:</strong> the App Store and subscriptions, Sign in with Apple, address search, place names on your blocks, the Siri “Where was I?” town lookup, App Attest.</li>
         <li><strong>Geoapify:</strong> place lookups for Pro (Section 5), unless you turn them off. It receives stop coordinates and search radii only, from our server.</li>
-        <li><strong>Esri and OpenStreetMap:</strong> map imagery in the location editor.</li>
+        <li><strong>Esri:</strong> map imagery in the location editor and on your block maps.</li>
         <li><strong>Linear, GitHub (Microsoft), and Anthropic:</strong> feedback you choose to send.</li>
         <li><strong>Cloudflare and GitHub Pages:</strong> serve this website and route our email.</li>
       </ul>
@@ -395,7 +455,8 @@
         <li>Account data (Sections 4 and 5), including stop analysis and place-lookup results, is kept while your account exists. If your Pro subscription lapses, sync stops but your cloud copy is kept so re-subscribing picks up where you left off.</li>
         <li>Stops sent for place lookups: held only while our server processes them, never stored.</li>
         <li>Feedback log bundles: deleted after 30 days. Crash reports: 90 days. Other feedback records: until you ask.</li>
-        <li>Per-trip location logs on your device: 30 days, then removed by the app.</li>
+        <li>Per-trip location logs on your device: 30 days, then removed by the app. The simplified route copies used to draw your block maps: removed the first time the app starts after 30 days from the block’s end.</li>
+        <li>Place data behind your blocks’ place names (grid squares, stop counts, block times, and names): kept on your iPhone until you delete the app, including for deleted blocks and after you sign out; never synced.</li>
       </ul>
       <p>
         To delete your account and everything we hold about you, email
